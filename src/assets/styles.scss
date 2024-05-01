@@ -1,0 +1,265 @@
+@import 'slider';
+
+
+$white:white;
+$black: black;
+$primaryColor: #FFD400;
+$buttonFontSize: 15px;
+
+@mixin linkNoDecoration {
+    text-decoration: none;
+    color: $white;
+}
+@mixin title {
+    font-size: 40px;
+    font-weight: bold;
+}
+@mixin description {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+body {
+    margin: 0;
+    font-family: "Montserrat", Sans-serif;
+}
+
+.main-button {
+    background-color: $primaryColor;
+    border-style: solid;
+    border-width: 0px 0px 0px 0px;
+    border-radius: 10px 10px 10px 10px;
+    padding: 15px 25px 15px 30px;
+    font-weight: 700;
+    font-size: $buttonFontSize;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.body {
+    position: relative;
+    overflow: hidden;
+
+    .navbar {
+        width: 65%;
+        display: flex;
+        margin: auto;
+        padding-top: 2%;
+
+        .nav-short {
+            width: 22%;
+        }
+        
+        .nav-long {
+            width: 30%;
+        }
+
+        .nav-black {
+            background-color: $black;
+            .nav-group > div >.nav-group__link {
+                color: $white !important;
+            }
+        }
+        .nav-white {
+            background-color: $white;
+            .nav-group > div >.nav-group__link {
+                color: $black !important;
+            }
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            box-sizing: border-box;
+            border-radius: 10px;
+    
+            .navbar-brand {
+                max-width: 20%;
+                img {
+                    width: 70%;
+                    padding: 5px 0 0 0;
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+            .nav-group {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                div {
+                    display: flex;
+                    justify-content: space-between;
+                    svg {
+                        width: 12px;
+                    }
+                }
+                .nav__menu-button {
+                    max-width: 9%;
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+                &__link {
+                    text-decoration: none;
+                    color: $black;
+                }
+            }
+        }
+    }
+
+    .inactive-menu {
+        top:100%;
+    }
+    .active-menu {
+        top:0;
+    }
+
+    .menu {
+        height: 100vh;
+        width: 100vw;
+        position: fixed;
+        z-index: 9999;
+        background-color: $black;
+        right: 0;
+        transition: all .6s ease-out;
+
+        .menu__close {
+            position: relative;
+            .menu__close-btn {
+                position: absolute;
+                width: 20px;
+                top: 30px;
+                right: 30px;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .menu__content {
+            .menu__content-list {
+                width: 65%;
+                margin: auto;
+                ul.pages {
+                    display: flex;
+                    flex-direction: column;
+                    padding-top: 50px;
+                    li {
+                        padding: 25px 12px;
+                        a {
+                            @include linkNoDecoration;
+                            font-size: 22px;
+                        }
+                    }
+                }
+                ul.footer{
+                    position: absolute;
+                    bottom: 10%;
+                    right: 17%;
+                    display: flex;
+                    justify-content: space-between;
+                    width: 17%;
+                    li {
+                        a {
+                            @include linkNoDecoration;
+                            font-size: 16px;
+                        }
+                    }
+                }
+                hr {
+                    width: 80%;
+                    position: absolute;
+                    bottom: 15%;
+                    left: 10%;
+                }
+            }
+        }
+    }
+
+    .first-section {
+        z-index: 1;
+        background-image: url("https://png.pngtree.com/background/20230519/original/pngtree-an-old-gym-setting-with-dumbbells-picture-image_2667256.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 95vh;
+
+        h1 {
+            height: 70%;
+            width: 40%;
+            color: $primaryColor;
+            margin: auto;
+            display: flex;
+            text-align: center;
+            align-items: center;
+            font-weight: 900;
+            font-size: 45px;        
+        }
+    }
+    
+    .second-section {
+        background-color: $black;
+        color: $white;
+        
+        .grid {
+            display: flex;
+            padding: 100px 0;
+            width: 65%;
+            margin: auto;
+            .grid-item {
+                width: 50%;
+                .title {
+                    @include title;
+                    padding: 0 350px 0 0; 
+                }
+            }
+            .description {
+                @include description;
+                p {
+                    padding: 0 120px 15px 0;
+                }
+            }
+        }
+        
+
+       
+    }
+
+    .third-section {
+        .flex {
+            display: flex;
+            .flex-content {
+                width: 50%;
+            }
+            .flex-content.image{
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .content {
+                padding: 170px 0px 100px 0px;
+                .box {
+                    box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.18);
+                    margin: 0px 100px 0px 100px;
+                    border-radius: 20px 20px 20px 20px;
+                    .box-content {
+                        padding: 50px 50px;
+                        .title {
+                            @include title;
+                        }
+                        p {
+                            @include description;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
