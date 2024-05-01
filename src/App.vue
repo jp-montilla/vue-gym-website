@@ -38,6 +38,17 @@
         </section>
 
         <section class="fourth-section">
+            <div class="fourth-section__content">
+                <p class="title">We Are The Right Fit For Those Who Are Searching For...</p>
+                <div class="grid">
+                    <div class="grid-item" v-for="x in cardContent" :key="x.number" >
+                        <CardNumbered :number="x.number"  :title="x.title" :content="x.content"/>
+                    </div>
+                </div>
+            </div>
+
+
+            
         </section>
 
     </div>
@@ -49,6 +60,7 @@
     import Menu from './components/Menu.vue'
     import Navbar from './components/Navbar.vue'
     import ImageSlider from './components/ImageSlider.vue'
+    import CardNumbered from './components/CardNumbered.vue'
 
     import './assets/styles.scss'
 
@@ -62,6 +74,23 @@
     function closeMenu() {
         menuState.value = 'inactive-menu' 
     }
+
+    const cardContent = [
+        {
+            'number': '01',
+            'title': 'HOLISTIC APPROACH\nTO PERSONAL TRAINING',
+            'content':'We are committed to keeping you accountable with the high care and high-challenge method that seeks to understand, empower and synergise with you on your journey to your breakthrough. We understand that the journey is not going to be easy but we also know that each one has what it takes to overcome, therefore, it is our goal to guide you toward doing that. The right coach and environment can help you erase limitations and realise your potential. But only if it’s the right coach and environment.'
+        },
+        {
+            'number': '02',
+            'title': 'HIGH CARE \n& HIGH CHALLENGE',
+            'content':'We are committed to keeping you accountable with the high care and high-challenge method that seeks to understand, empower and synergise with you on your journey to your breakthrough.\nWe understand that the journey is not going to be easy but we also know that each one has what it takes to overcome, therefore, it is our goal to guide you toward doing that. The right coach and environment can help you erase limitations and realise your potential. But only if it’s the right coach and environment.'
+        },{
+            'number': '03',
+            'title': 'EMPOWERING\nPRIVATE SPACE',
+            'content':'Crowded workout spaces and awkward stares from others are things in the past.\nYou deserve a 5-star rated personal training experience from the moment you walk in, to the moment you walk out - clean, sanitized, judgment-free and empowering. Our appointment based business model will mean that there will be no gym members loitering around which could be off putting for some. What you will get instead is an environment where everyone is focused on what\'s in front of them with their respective coach.'
+        },
+    ]
 </script>
 
 
