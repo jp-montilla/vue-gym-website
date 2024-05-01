@@ -13,15 +13,15 @@
     const props = defineProps({
         number: {
             type: String,
-            required: false,
+            required: true,
         },
         title: {
             type: String,
-            required: false,
+            required: true,
         },
         content: {
             type: String,
-            required: false,
+            required: true,
         },
     });
 </script>

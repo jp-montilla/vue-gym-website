@@ -46,9 +46,17 @@
                     </div>
                 </div>
             </div>
+        </section>
 
-
-            
+        <section class="fifth-section">
+            <div class="fifth-section__content">
+                <p class="title">Explore our studios</p>
+                <div class="grid">
+                    <div class="grid-item" v-for="x in studios" :key="x.name">
+                        <Studio :image="x.image" :name="x.name" :location="x.location"/>
+                    </div>
+                </div>
+            </div>
         </section>
 
     </div>
@@ -61,6 +69,7 @@
     import Navbar from './components/Navbar.vue'
     import ImageSlider from './components/ImageSlider.vue'
     import CardNumbered from './components/CardNumbered.vue'
+    import Studio from './components/Studio.vue'
 
     import './assets/styles.scss'
 
@@ -89,6 +98,39 @@
             'number': '03',
             'title': 'EMPOWERING\nPRIVATE SPACE',
             'content':'Crowded workout spaces and awkward stares from others are things in the past.\nYou deserve a 5-star rated personal training experience from the moment you walk in, to the moment you walk out - clean, sanitized, judgment-free and empowering. Our appointment based business model will mean that there will be no gym members loitering around which could be off putting for some. What you will get instead is an environment where everyone is focused on what\'s in front of them with their respective coach.'
+        },
+    ]
+
+    const studios = [
+        {
+            'image': 'https://placehold.co/1200x800',
+            'name': 'Kota Laksamana',
+            'location': 'Melaka',
+        },
+        {
+            'image': 'https://placehold.co/1200x800',
+            'name': 'Montkiara',
+            'location': 'Kuala Lumpur',
+        },
+        {
+            'image': 'https://placehold.co/1200x800',
+            'name': 'Ayer Keroh',
+            'location': 'Melaka',
+        },
+        {
+            'image': 'https://placehold.co/1200x800',
+            'name': 'Damansara Heights',
+            'location': 'Kuala Lumpur',
+        },
+        {
+            'image': 'https://placehold.co/1200x800',
+            'name': 'Bukit Jalil',
+            'location': 'Kuala Lumpur',
+        },
+        {
+            'image': 'https://placehold.co/1200x800',
+            'name': 'Jalan Ampang',
+            'location': 'Kuala Lumpur',
         },
     ]
 </script>
